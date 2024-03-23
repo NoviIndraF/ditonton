@@ -4,6 +4,8 @@ import 'package:tv_series/domain/entities/genre.dart';
 import 'package:tv_series/domain/entities/tv_series.dart';
 import 'package:tv_series/domain/entities/tv_series_detail.dart';
 
+final testId = 1;
+
 final testTvSeries = TvSeries(
   adult: false,
   backdropPath: '/muth4OYamXf41G2evdrLEg8d3om.jpg',
