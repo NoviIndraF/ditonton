@@ -3,6 +3,5 @@ class Assets {
   Assets._();
 
   static const String assetsCircleG = 'assets/circle-g.png';
-  static const String certificateCertificate = 'certificate/certificate.cer';
 
 }

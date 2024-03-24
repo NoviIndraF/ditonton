@@ -23,7 +23,7 @@ void main() {
 
   group('get On Airing Tv Series', () {
     final tTvSeriesList = TvSeriesResponse.fromJson(
-            json.decode(readJson('dummy_data/airing_today.json')))
+            json.decode(readJson('tv_series/dummy_data/airing_today.json')))
         .tvSeriesList;
 
     test('should return list of TvSeries Model when the response code is 200',
@@ -32,7 +32,7 @@ void main() {
       when(mockSSLPinningClient
               .get(Uri.parse('$BASE_URL/tv/airing_today?$API_KEY')))
           .thenAnswer((_) async =>
-              http.Response(readJson('dummy_data/airing_today.json'), 200));
+              http.Response(readJson('tv_series/dummy_data/airing_today.json'), 200));
       // act
       final result = await dataSource.getOnTheAiringTvSeries();
       // assert
@@ -55,7 +55,7 @@ void main() {
 
   group('get Popular Tv Series', () {
     final tTvSeriesList =
-        TvSeriesResponse.fromJson(json.decode(readJson('dummy_data/popular.json')))
+        TvSeriesResponse.fromJson(json.decode(readJson('tv_series/dummy_data/popular.json')))
             .tvSeriesList;
 
     test('should return list of tv_series when response is success (200)',
@@ -63,7 +63,7 @@ void main() {
       // arrange
       when(mockSSLPinningClient.get(Uri.parse('$BASE_URL/tv/popular?$API_KEY')))
           .thenAnswer((_) async =>
-              http.Response(readJson('dummy_data/popular.json'), 200));
+              http.Response(readJson('tv_series/dummy_data/popular.json'), 200));
       // act
       final result = await dataSource.getPopularTvSeries();
       // assert
@@ -85,14 +85,14 @@ void main() {
 
   group('get Top Rated Tv Series', () {
     final tTvSeriesList = TvSeriesResponse.fromJson(
-            json.decode(readJson('dummy_data/top_rated.json')))
+            json.decode(readJson('tv_series/dummy_data/top_rated.json')))
         .tvSeriesList;
 
     test('should return list of tv_series when response code is 200 ', () async {
       // arrange
       when(mockSSLPinningClient.get(Uri.parse('$BASE_URL/tv/top_rated?$API_KEY')))
           .thenAnswer((_) async =>
-              http.Response(readJson('dummy_data/top_rated.json'), 200));
+              http.Response(readJson('tv_series/dummy_data/top_rated.json'), 200));
       // act
       final result = await dataSource.getTopRatedTvSeries();
       // assert
@@ -114,13 +114,13 @@ void main() {
   group('get tv_series detail', () {
     final tId = 1;
     final tTvSeriesDetail = TvSeriesDetailResponse.fromJson(
-        json.decode(readJson('dummy_data/tv_series_detail.json')));
+        json.decode(readJson('tv_series/dummy_data/tv_series_detail.json')));
 
     test('should return tv_series detail when the response code is 200', () async {
       // arrange
       when(mockSSLPinningClient.get(Uri.parse('$BASE_URL/tv/$tId?$API_KEY')))
           .thenAnswer((_) async =>
-              http.Response(readJson('dummy_data/tv_series_detail.json'), 200));
+              http.Response(readJson('tv_series/dummy_data/tv_series_detail.json'), 200));
       // act
       final result = await dataSource.getTvSeriesDetail(tId);
       // assert
@@ -141,7 +141,7 @@ void main() {
 
   group('get tv_series recommendations', () {
     final tTvSeriesList = TvSeriesResponse.fromJson(
-            json.decode(readJson('dummy_data/tv_series_recommendations.json')))
+            json.decode(readJson('tv_series/dummy_data/tv_series_recommendations.json')))
         .tvSeriesList;
     final tId = 1;
 
@@ -151,7 +151,7 @@ void main() {
       when(mockSSLPinningClient
               .get(Uri.parse('$BASE_URL/tv/$tId/recommendations?$API_KEY')))
           .thenAnswer((_) async => http.Response(
-              readJson('dummy_data/tv_series_recommendations.json'), 200));
+              readJson('tv_series/dummy_data/tv_series_recommendations.json'), 200));
       // act
       final result = await dataSource.getTvSeriesRecommendations(tId);
       // assert
@@ -173,7 +173,7 @@ void main() {
 
   group('search tv_series', () {
     final tSearchResult = TvSeriesResponse.fromJson(
-            json.decode(readJson('dummy_data/search_one_piece.json')))
+            json.decode(readJson('tv_series/dummy_data/search_one_piece.json')))
         .tvSeriesList;
     final tQuery = 'One Piece';
 
@@ -182,7 +182,7 @@ void main() {
       when(mockSSLPinningClient
               .get(Uri.parse('$BASE_URL/search/tv?$API_KEY&query=$tQuery')))
           .thenAnswer((_) async => http.Response(
-              readJson('dummy_data/search_one_piece.json'), 200));
+              readJson('tv_series/dummy_data/search_one_piece.json'), 200));
       // act
       final result = await dataSource.searchTvSeries(tQuery);
       // assert

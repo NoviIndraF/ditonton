@@ -22,7 +22,7 @@ void main() {
 
   group('get Now Playing Movies', () {
     final tMovieList = MovieResponse.fromJson(
-            json.decode(readJson('dummy_data/now_playing.json')))
+            json.decode(readJson('movie/dummy_data/now_playing.json')))
         .movieList;
 
     test('should return list of Movie Model when the response code is 200',
@@ -31,7 +31,7 @@ void main() {
       when(mockSSLPinningClient
               .get(Uri.parse('$BASE_URL/movie/now_playing?$API_KEY')))
           .thenAnswer((_) async =>
-              http.Response(readJson('dummy_data/now_playing.json'), 200));
+              http.Response(readJson('movie/dummy_data/now_playing.json'), 200));
       // act
       final result = await dataSource.getNowPlayingMovies();
       // assert
@@ -54,7 +54,7 @@ void main() {
 
   group('get Popular Movies', () {
     final tMovieList =
-        MovieResponse.fromJson(json.decode(readJson('dummy_data/popular.json')))
+        MovieResponse.fromJson(json.decode(readJson('movie/dummy_data/popular.json')))
             .movieList;
 
     test('should return list of movies when response is success (200)',
@@ -62,7 +62,7 @@ void main() {
       // arrange
       when(mockSSLPinningClient.get(Uri.parse('$BASE_URL/movie/popular?$API_KEY')))
           .thenAnswer((_) async =>
-              http.Response(readJson('dummy_data/popular.json'), 200));
+              http.Response(readJson('movie/dummy_data/popular.json'), 200));
       // act
       final result = await dataSource.getPopularMovies();
       // assert
@@ -84,14 +84,14 @@ void main() {
 
   group('get Top Rated Movies', () {
     final tMovieList = MovieResponse.fromJson(
-            json.decode(readJson('dummy_data/top_rated.json')))
+            json.decode(readJson('movie/dummy_data/top_rated.json')))
         .movieList;
 
     test('should return list of movies when response code is 200 ', () async {
       // arrange
       when(mockSSLPinningClient.get(Uri.parse('$BASE_URL/movie/top_rated?$API_KEY')))
           .thenAnswer((_) async =>
-              http.Response(readJson('dummy_data/top_rated.json'), 200));
+              http.Response(readJson('movie/dummy_data/top_rated.json'), 200));
       // act
       final result = await dataSource.getTopRatedMovies();
       // assert
@@ -113,13 +113,13 @@ void main() {
   group('get movie detail', () {
     final tId = 1;
     final tMovieDetail = MovieDetailResponse.fromJson(
-        json.decode(readJson('dummy_data/movie_detail.json')));
+        json.decode(readJson('movie/dummy_data/movie_detail.json')));
 
     test('should return movie detail when the response code is 200', () async {
       // arrange
       when(mockSSLPinningClient.get(Uri.parse('$BASE_URL/movie/$tId?$API_KEY')))
           .thenAnswer((_) async =>
-              http.Response(readJson('dummy_data/movie_detail.json'), 200));
+              http.Response(readJson('movie/dummy_data/movie_detail.json'), 200));
       // act
       final result = await dataSource.getMovieDetail(tId);
       // assert
@@ -140,7 +140,7 @@ void main() {
 
   group('get movie recommendations', () {
     final tMovieList = MovieResponse.fromJson(
-            json.decode(readJson('dummy_data/movie_recommendations.json')))
+            json.decode(readJson('movie/dummy_data/movie_recommendations.json')))
         .movieList;
     final tId = 1;
 
@@ -150,7 +150,7 @@ void main() {
       when(mockSSLPinningClient
               .get(Uri.parse('$BASE_URL/movie/$tId/recommendations?$API_KEY')))
           .thenAnswer((_) async => http.Response(
-              readJson('dummy_data/movie_recommendations.json'), 200));
+              readJson('movie/dummy_data/movie_recommendations.json'), 200));
       // act
       final result = await dataSource.getMovieRecommendations(tId);
       // assert
@@ -172,7 +172,7 @@ void main() {
 
   group('search movies', () {
     final tSearchResult = MovieResponse.fromJson(
-            json.decode(readJson('dummy_data/search_spiderman_movie.json')))
+            json.decode(readJson('movie/dummy_data/search_spiderman_movie.json')))
         .movieList;
     final tQuery = 'Spiderman';
 
@@ -181,7 +181,7 @@ void main() {
       when(mockSSLPinningClient
               .get(Uri.parse('$BASE_URL/search/movie?$API_KEY&query=$tQuery')))
           .thenAnswer((_) async => http.Response(
-              readJson('dummy_data/search_spiderman_movie.json'), 200));
+              readJson('movie/dummy_data/search_spiderman_movie.json'), 200));
       // act
       final result = await dataSource.searchMovies(tQuery);
       // assert
