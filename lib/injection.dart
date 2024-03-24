@@ -1,3 +1,4 @@
+import 'package:core/utils/ssl_pinning.dart';
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 import 'package:movie/movie.dart';
@@ -198,4 +199,5 @@ void init() {
 
   // external
   locator.registerLazySingleton(() => http.Client());
+  locator.registerLazySingleton<SSLPinningClient>(() => SSLPinningClient());
 }

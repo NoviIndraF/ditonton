@@ -1,3 +1,4 @@
+import 'package:core/utils/ssl_pinning.dart';
 import 'package:mockito/annotations.dart';
 import 'package:http/http.dart' as http;
 import 'package:movie/data/datasources/db/database_helper.dart';
@@ -9,6 +10,7 @@ import 'package:movie/domain/repositories/movie_repository.dart';
   MovieRepository,
   MovieRemoteDataSource,
   MovieLocalDataSource,
+  SSLPinningClient,
   DatabaseHelper,
 ], customMocks: [
   MockSpec<http.Client>(as: #MockHttpClient)

@@ -42,6 +42,8 @@ dependencies:
     path: search
   tv_series:
     path: tv_series
+  firebase_core: ^2.24.2
+  firebase_crashlytics: ^3.4.9
 
 dev_dependencies:
   flutter_test:
@@ -54,4 +56,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - certificate/
     - assets/
