@@ -19,18 +19,18 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.1 <4.0.0'
+  sdk: '>=3.3.2 <=4.0.0'
 
 
 dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.2
-  flutter_bloc: ^8.0.0
-  get_it: ^7.1.3
-  provider: ^6.0.3
-  path_provider: ^2.0.2
+  cupertino_icons: ^1.0.6
+  flutter_bloc: ^8.1.5
+  get_it: ^7.6.7
+  provider: ^6.1.2
+  path_provider: ^2.1.2
 
   about:
     path: about
@@ -42,17 +42,17 @@ dependencies:
     path: search
   tv_series:
     path: tv_series
-  firebase_core: ^2.24.2
-  firebase_crashlytics: ^3.4.9
+  firebase_core: ^2.27.1
+  firebase_crashlytics: ^3.4.19
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^2.0.0
-  mockito: ^5.4.2
-  build_runner: ^2.0.4
-  bloc_test: ^9.0.0
+  flutter_lints: ^3.0.1
+  mockito: ^5.4.4
+  build_runner: ^2.4.8
+  bloc_test: ^9.1.7
 
 flutter:
   uses-material-design: true

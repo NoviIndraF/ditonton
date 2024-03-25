@@ -10,7 +10,6 @@ import 'package:movie/presentation/bloc/popular_movie/popular_movie_bloc.dart';
 import 'package:movie/presentation/bloc/recomendation_movie/recomendation_movie_bloc.dart';
 import 'package:movie/presentation/bloc/top_rated_movie/top_rated_movie_bloc.dart';
 import 'package:movie/presentation/bloc/watchlist_movie/watchlist_movie_bloc.dart';
-import 'package:provider/provider.dart';
 import 'package:movie/movie.dart';
 import 'package:search/search.dart';
 import 'package:search/tv_series/presentation/bloc/search_tv_series_bloc.dart';
